@@ -16,7 +16,8 @@ const forecast = (latitude, longitude,callback) => {
        {
            const temp = response.body.current.temperature 
            const loc = response.body.location.name
-           callback(undefined, 'The Temprature is '  + temp + ' Degree Celcius')
+           callback(undefined, response.body.current.weather_descriptions[0] + '. It is currently ' + temp + ' degress out. It feels like '+
+           response.body.current.feelslike + ' degree out.')
            
        }
 
